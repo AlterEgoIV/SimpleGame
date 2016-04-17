@@ -18,8 +18,8 @@ public class TitleState extends State
     @Override
     public void update(SpriteBatch batch)
     {
-        //Gdx.gl.glClearColor(.5f, 0, 0, 1);
-        //Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClearColor(.5f, 0, 0, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         if(Gdx.input.isKeyPressed(Input.Keys.X))
         {
@@ -31,6 +31,7 @@ public class TitleState extends State
     public void enter()
     {
         System.out.println("Entered Title state.");
+        System.out.println("Press X to change to Play state.");
     }
 
     @Override

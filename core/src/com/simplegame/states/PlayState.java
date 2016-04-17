@@ -20,8 +20,8 @@ public class PlayState extends State
     @Override
     public void update(SpriteBatch batch)
     {
-        //Gdx.gl.glClearColor(0, 0, 1, 1);
-        //Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClearColor(0, 0, .5f, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         for(GameObject obj : gameObjects)
         {
@@ -42,6 +42,7 @@ public class PlayState extends State
     public void enter()
     {
         System.out.println("Entered Play state.");
+        System.out.println("Press Z to change to Title state.");
     }
 
     @Override

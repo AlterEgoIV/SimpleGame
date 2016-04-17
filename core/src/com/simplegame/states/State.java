@@ -11,7 +11,15 @@ import java.util.ArrayList;
  */
 public abstract class State
 {
+    // Why does State hold a StateMachine?
     protected StateMachine stateMachine;
+
+    /*
+        Is it okay for a State to manage game objects? What about only certain types of
+        objects depending on the Game State? For example, PlayState might only manage Player, Enemy,
+        Projectile etc, objects. However, this would mean creating ArrayLists of certain sets
+        of objects for different States. I'm not sure if that would be good practice.
+    */
     protected ArrayList<GameObject> gameObjects;
 
     public State(StateMachine stateMachine)

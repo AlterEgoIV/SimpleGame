@@ -34,7 +34,7 @@ public class Player extends GameObject
 
         pixmap.setColor(1, 1, 1, 0);
         pixmap.fill();
-        pixmap.setColor(Color.GREEN);
+        pixmap.setColor(Color.FOREST);
         pixmap.fillCircle(pixmap.getWidth() / 2 - 1, pixmap.getHeight() / 2 - 1, (int) width / 2 - 1);
 
         texture = new Texture(pixmap);
