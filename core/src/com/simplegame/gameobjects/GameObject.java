@@ -23,6 +23,7 @@ public abstract class GameObject
     protected float speed;
 
     protected abstract void initialise();
+    protected abstract void initialise(float x, float y);
     public abstract void update();
     public abstract void render();
 

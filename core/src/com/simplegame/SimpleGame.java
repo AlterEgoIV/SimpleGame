@@ -3,7 +3,9 @@ package com.simplegame;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.simplegame.gameobjects.Enemy;
 import com.simplegame.gameobjects.GameObject;
 import com.simplegame.gameobjects.player.Player;
 import com.simplegame.states.StateMachine;
@@ -22,12 +24,15 @@ public class SimpleGame extends ApplicationAdapter
 	public static CollisionHandler collisionHandler;
 	public static ArrayList<GameObject> gameObjects;
 	public static SpriteBatch batch;
+	public static OrthographicCamera camera;
 
 	@Override
 	public void create()
 	{
+		camera = new OrthographicCamera(1280, 720);
 		gameObjects = new ArrayList<GameObject>();
-		gameObjects.add(new Player());
+		gameObjects.add(new Player(0, 0));
+		gameObjects.add(new Enemy(120, 120));
 
 		batch = new SpriteBatch();
 
@@ -46,6 +51,7 @@ public class SimpleGame extends ApplicationAdapter
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 
 		gameStateMachine.update();

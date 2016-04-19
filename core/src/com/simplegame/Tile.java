@@ -42,6 +42,12 @@ public class Tile extends com.simplegame.gameobjects.GameObject
     }
 
     @Override
+    protected void initialise(float x, float y)
+    {
+
+    }
+
+    @Override
     public void update()
     {
 
