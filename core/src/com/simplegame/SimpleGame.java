@@ -20,7 +20,7 @@ public class SimpleGame extends ApplicationAdapter
 	*/
 	public StateMachine stateMachine;
 	public static ArrayList<GameObject> gameObjects;
-	public SpriteBatch batch;
+	public static SpriteBatch batch;
 
 	@Override
 	public void create()
