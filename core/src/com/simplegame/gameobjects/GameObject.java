@@ -14,7 +14,6 @@ import java.awt.Rectangle;
 public abstract class GameObject
 {
     protected Vector2 position;
-    protected Vector2 direction;
     protected Pixmap pixmap;
     protected Texture texture;
     protected Sprite sprite;

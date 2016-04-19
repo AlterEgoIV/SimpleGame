@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.gameobjects.GameObject;
 
-
 /**
  * Created by Carl on 07/04/2016.
  */
@@ -29,7 +28,7 @@ public class Player extends GameObject
         speed = 10.0f;
 
         position = new Vector2(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
-        direction = new Vector2(1, 0);
+
         pixmap = new Pixmap((int)width, (int)height, Pixmap.Format.RGBA8888);
 
         pixmap.setColor(1, 1, 1, 0);

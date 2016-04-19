@@ -19,16 +19,21 @@ public class SimpleGame extends ApplicationAdapter
   		What about different levels, like LevelOne, LevelTwo, can they be states?
 	*/
 	public StateMachine stateMachine;
+	public static ArrayList<GameObject> gameObjects;
 	public SpriteBatch batch;
 
 	@Override
 	public void create()
 	{
+		gameObjects = new ArrayList<GameObject>();
+		gameObjects.add(new Player());
 		// Why can't StateMachine be constructed with an initial State?
 		stateMachine = new StateMachine(/* new TitleState(stateMachine) */);
 
 		// Why must a StateMachine instance be passed to a new State?
 		stateMachine.changeState(new TitleState(stateMachine));
+
+
 
 		batch = new SpriteBatch();
 	}
