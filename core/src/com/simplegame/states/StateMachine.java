@@ -1,7 +1,5 @@
 package com.simplegame.states;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 /**
  * Created by Carl on 15/04/2016.
  */
@@ -16,11 +14,11 @@ public class StateMachine
         }
     */
 
-    public void update(SpriteBatch batch)
+    public void update()
     {
         if(state != null)
         {
-            state.update(batch);
+            state.update();
         }
     }
 

@@ -23,5 +23,5 @@ public abstract class GameObject
 
     protected abstract void initialise();
     public abstract void update();
-    public abstract void render(SpriteBatch batch);
+    public abstract void render();
 }

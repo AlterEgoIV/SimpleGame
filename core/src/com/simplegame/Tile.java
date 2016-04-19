@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class Tile extends com.simplegame.gameobjects.GameObject
 {
-    Random rand;
+    private Random rand;
 
     public Tile()
     {
@@ -49,8 +49,8 @@ public class Tile extends com.simplegame.gameobjects.GameObject
     }
 
     @Override
-    public void render(SpriteBatch batch)
+    public void render()
     {
-        sprite.draw(batch);
+        sprite.draw(SimpleGame.batch);
     }
 }

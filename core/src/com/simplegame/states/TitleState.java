@@ -3,7 +3,6 @@ package com.simplegame.states;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
  * Created by Carl on 15/04/2016.
@@ -16,7 +15,7 @@ public class TitleState extends State
     }
 
     @Override
-    public void update(SpriteBatch batch)
+    public void update()
     {
         Gdx.gl.glClearColor(.5f, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.simplegame.SimpleGame;
 import com.simplegame.gameobjects.GameObject;
 
 /**
@@ -51,9 +52,9 @@ public class Player extends GameObject
     }
 
     @Override
-    public void render(SpriteBatch batch)
+    public void render()
     {
-        sprite.draw(batch);
+        sprite.draw(SimpleGame.batch);
     }
 
     private void handleInput()

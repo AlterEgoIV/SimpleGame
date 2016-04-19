@@ -18,7 +18,7 @@ public class SimpleGame extends ApplicationAdapter
   		such as Game States like Title, Menu, Play, Gameover?
   		What about different levels, like LevelOne, LevelTwo, can they be states?
 	*/
-	public StateMachine stateMachine;
+	private StateMachine gameStateMachine;
 	public static ArrayList<GameObject> gameObjects;
 	public static SpriteBatch batch;
 
@@ -27,15 +27,14 @@ public class SimpleGame extends ApplicationAdapter
 	{
 		gameObjects = new ArrayList<GameObject>();
 		gameObjects.add(new Player());
-		// Why can't StateMachine be constructed with an initial State?
-		stateMachine = new StateMachine(/* new TitleState(stateMachine) */);
-
-		// Why must a StateMachine instance be passed to a new State?
-		stateMachine.changeState(new TitleState(stateMachine));
-
-
 
 		batch = new SpriteBatch();
+
+		// Why can't StateMachine be constructed with an initial State?
+		gameStateMachine = new StateMachine(/* new TitleState(stateMachine) */);
+
+		// Why must a StateMachine instance be passed to a new State?
+		gameStateMachine.changeState(new TitleState(gameStateMachine));
 	}
 
 	@Override
@@ -53,7 +52,7 @@ public class SimpleGame extends ApplicationAdapter
 		 	so they can manage the rendering of game objects?
 		 	A SpriteBatch must be used to draw Textures and Sprites to the screen in Libgdx.
 		*/
-		stateMachine.update(batch);
+		gameStateMachine.update();
 
 		batch.end();
 	}

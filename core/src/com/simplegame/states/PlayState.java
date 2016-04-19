@@ -3,7 +3,6 @@ package com.simplegame.states;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.simplegame.SimpleGame;
 import com.simplegame.gameobjects.GameObject;
 
@@ -18,7 +17,7 @@ public class PlayState extends State
     }
 
     @Override
-    public void update(SpriteBatch batch)
+    public void update()
     {
         Gdx.gl.glClearColor(0, 0, .5f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -26,7 +25,7 @@ public class PlayState extends State
         for(GameObject obj : SimpleGame.gameObjects)
         {
             obj.update();
-            obj.render(batch);
+            obj.render();
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.Z))
