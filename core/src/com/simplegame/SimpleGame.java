@@ -19,6 +19,7 @@ public class SimpleGame extends ApplicationAdapter
   		What about different levels, like LevelOne, LevelTwo, can they be states?
 	*/
 	private StateMachine gameStateMachine;
+	public static CollisionHandler collisionHandler;
 	public static ArrayList<GameObject> gameObjects;
 	public static SpriteBatch batch;
 
@@ -29,6 +30,8 @@ public class SimpleGame extends ApplicationAdapter
 		gameObjects.add(new Player());
 
 		batch = new SpriteBatch();
+
+		collisionHandler = new CollisionHandler();
 
 		// Why can't StateMachine be constructed with an initial State?
 		gameStateMachine = new StateMachine(/* new TitleState(stateMachine) */);
@@ -45,13 +48,6 @@ public class SimpleGame extends ApplicationAdapter
 
 		batch.begin();
 
-		/*
-			Libgdx question:
-
-			Is it okay to send a SpriteBatch around to different States
-		 	so they can manage the rendering of game objects?
-		 	A SpriteBatch must be used to draw Textures and Sprites to the screen in Libgdx.
-		*/
 		gameStateMachine.update();
 
 		batch.end();

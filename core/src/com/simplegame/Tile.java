@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 import java.awt.Rectangle;
@@ -51,6 +50,6 @@ public class Tile extends com.simplegame.gameobjects.GameObject
     @Override
     public void render()
     {
-        sprite.draw(SimpleGame.batch);
+        getSprite().draw(SimpleGame.batch);
     }
 }

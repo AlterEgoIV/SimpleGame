@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.SimpleGame;
 import com.simplegame.gameobjects.GameObject;
@@ -30,12 +29,12 @@ public class Player extends GameObject
 
         position = new Vector2(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
 
-        pixmap = new Pixmap((int)width, (int)height, Pixmap.Format.RGBA8888);
+        pixmap = new Pixmap((int)getWidth(), (int)getHeight(), Pixmap.Format.RGBA8888);
 
         pixmap.setColor(1, 1, 1, 0);
         pixmap.fill();
         pixmap.setColor(Color.FOREST);
-        pixmap.fillCircle(pixmap.getWidth() / 2 - 1, pixmap.getHeight() / 2 - 1, (int) width / 2 - 1);
+        pixmap.fillCircle(pixmap.getWidth() / 2 - 1, pixmap.getHeight() / 2 - 1, (int)getWidth() / 2 - 1);
 
         texture = new Texture(pixmap);
         pixmap.dispose();
@@ -54,29 +53,29 @@ public class Player extends GameObject
     @Override
     public void render()
     {
-        sprite.draw(SimpleGame.batch);
+        getSprite().draw(SimpleGame.batch);
     }
 
     private void handleInput()
     {
         if(Gdx.input.isKeyPressed(Input.Keys.UP))
         {
-            sprite.translateY(speed);
+            getSprite().translateY(speed);
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
         {
-            sprite.translateY(-speed);
+            getSprite().translateY(-speed);
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT))
         {
-            sprite.translateX(-speed);
+            getSprite().translateX(-speed);
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT))
         {
-            sprite.translateX(speed);
+            getSprite().translateX(speed);
         }
     }
 }

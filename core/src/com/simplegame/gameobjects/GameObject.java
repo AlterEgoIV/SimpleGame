@@ -18,10 +18,31 @@ public abstract class GameObject
     protected Texture texture;
     protected Sprite sprite;
     protected Rectangle boundary;
-    protected float width, height;
+    protected float width;
+    protected float height;
     protected float speed;
 
     protected abstract void initialise();
     public abstract void update();
     public abstract void render();
+
+    public Sprite getSprite()
+    {
+        return sprite;
+    }
+
+    public float getWidth()
+    {
+        return width;
+    }
+
+    public float getHeight()
+    {
+        return height;
+    }
+
+    public float getSpeed()
+    {
+        return speed;
+    }
 }
