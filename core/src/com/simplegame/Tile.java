@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
+import com.simplegame.gameobjects.GameObject;
 
 import java.awt.Rectangle;
 import java.util.Random;
@@ -12,9 +13,11 @@ import java.util.Random;
 /**
  * Created by Carl on 10/04/2016.
  */
-public class Tile extends com.simplegame.gameobjects.GameObject
+public class Tile extends GameObject
 {
     private Random rand;
+    private int id;
+    private boolean hasObject;
 
     public Tile()
     {
@@ -25,6 +28,8 @@ public class Tile extends com.simplegame.gameobjects.GameObject
     protected void initialise()
     {
         rand = new Random();
+        id = 0;
+        hasObject = false;
         width = Gdx.graphics.getWidth() / 10;
         height = Gdx.graphics.getHeight() / 10;
         position = new Vector2(0, 0);

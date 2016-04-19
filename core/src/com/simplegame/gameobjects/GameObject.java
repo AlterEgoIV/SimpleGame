@@ -46,4 +46,9 @@ public abstract class GameObject
     {
         return speed;
     }
+
+    public Vector2 getPosition()
+    {
+        return position;
+    }
 }

@@ -1,8 +1,5 @@
 package com.simplegame;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
-
 /**
  * Created by Carl on 10/04/2016.
  */
@@ -24,20 +21,20 @@ public class Tilemap
             for(int j = 0; j < cols; ++j)
             {
                 tile[i][j] = new Tile();
-                //tile[i][j].position.x = i * tile[i][j].width;
-                //tile[i][j].position.y = j * tile[i][j].height;
-                //tile[i][j].sprite.setPosition(tile[i][j].position.x, tile[i][j].position.y);
+                tile[i][j].getPosition().x = i * tile[i][j].getWidth();
+                tile[i][j].getPosition().y = j * tile[i][j].getHeight();
+                tile[i][j].getSprite().setPosition(tile[i][j].getPosition().x, tile[i][j].getPosition().y);
             }
         }
     }
 
-    public void render(SpriteBatch batch)
+    public void render()
     {
         for(int i = 0; i < rows; ++i)
         {
             for(int j = 0; j < cols; ++j)
             {
-                //tile[i][j].sprite.draw(batch);
+                tile[i][j].getSprite().draw(SimpleGame.batch);
             }
         }
     }
