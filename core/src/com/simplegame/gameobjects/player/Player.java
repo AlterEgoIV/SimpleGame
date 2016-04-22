@@ -18,6 +18,8 @@ public class Player extends GameObject
 {
     public Player(float x, float y)
     {
+        stateMachine.changeState(new HappyState(stateMachine));
+
         width = 100.0f;
         height = 100.0f;
         speed = 10.0f;
@@ -38,8 +40,6 @@ public class Player extends GameObject
         sprite = new Sprite(texture);
         sprite.setOriginCenter();
         sprite.setPosition(position.x - width / 2, position.y - height / 2);
-
-        stateMachine.changeState(new HappyState(stateMachine));
     }
 
     @Override

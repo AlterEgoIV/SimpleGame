@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.simplegame.gameobjects.GameObject;
+import com.simplegame.gameobjects.enemy.Enemy;
 import com.simplegame.gameobjects.player.Player;
 import com.simplegame.states.StateMachine;
 import com.simplegame.states.gamestates.TitleState;
@@ -32,7 +33,7 @@ public class SimpleGame extends ApplicationAdapter
 		camera = new OrthographicCamera(1280, 720);
 		gameObjects = new ArrayList<GameObject>();
 		gameObjects.add(new Player(0, 0));
-		//gameObjects.add(new Enemy(120, 120));
+		gameObjects.add(new Enemy(120, 120));
 		tilemap = new Tilemap(10, 10);
 
 		batch = new SpriteBatch();
