@@ -9,8 +9,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.SimpleGame;
 import com.simplegame.gameobjects.GameObject;
-import com.simplegame.states.HappyState;
-import com.simplegame.states.State;
+import com.simplegame.states.objectstates.HappyState;
 
 /**
  * Created by Carl on 07/04/2016.
@@ -18,19 +17,6 @@ import com.simplegame.states.State;
 public class Player extends GameObject
 {
     public Player(float x, float y)
-    {
-        initialise(x, y);
-        objectStateMachine.changeState(new HappyState(objectStateMachine));
-    }
-
-    @Override
-    protected void initialise()
-    {
-
-    }
-
-    @Override
-    protected void initialise(float x, float y)
     {
         width = 100.0f;
         height = 100.0f;
@@ -52,12 +38,14 @@ public class Player extends GameObject
         sprite = new Sprite(texture);
         sprite.setOriginCenter();
         sprite.setPosition(position.x - width / 2, position.y - height / 2);
+
+        stateMachine.changeState(new HappyState(stateMachine));
     }
 
     @Override
     public void update()
     {
-        objectStateMachine.update(this);
+        stateMachine.update(this);
         handleInput();
 
         SimpleGame.camera.position.set(sprite.getX() + width / 2, sprite.getY() + height / 2, 0);

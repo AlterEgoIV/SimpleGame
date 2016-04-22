@@ -21,12 +21,6 @@ public class Tile extends GameObject
 
     public Tile()
     {
-        initialise();
-    }
-
-    @Override
-    protected void initialise()
-    {
         rand = new Random();
         id = 0;
         hasObject = false;
@@ -44,12 +38,6 @@ public class Tile extends GameObject
         //sprite.setPosition(position.x, position.y);
 
         System.out.println("Tile object initialised.");
-    }
-
-    @Override
-    protected void initialise(float x, float y)
-    {
-
     }
 
     @Override

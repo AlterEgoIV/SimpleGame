@@ -1,9 +1,11 @@
-package com.simplegame.states;
+package com.simplegame.states.objectstates;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.simplegame.gameobjects.GameObject;
+import com.simplegame.states.State;
+import com.simplegame.states.StateMachine;
 
 /**
  * Created by Carl on 22/04/2016.
@@ -22,12 +24,12 @@ public class HappyState extends State
 
         if(Gdx.input.isKeyPressed(Input.Keys.W))
         {
-            obj.objectStateMachine.changeState(new SadState(obj.objectStateMachine));
+            obj.getStateMachine().changeState(new SadState(obj.getStateMachine()));
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.E))
         {
-            obj.objectStateMachine.changeState(new AngryState(obj.objectStateMachine));
+            obj.getStateMachine().changeState(new AngryState(obj.getStateMachine()));
         }
     }
 

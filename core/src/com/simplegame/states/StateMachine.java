@@ -9,13 +9,6 @@ public class StateMachine
 {
     private State state;
 
-    /*
-        public StateMachine(State state)
-        {
-            this.state = state; // Would set the initial State
-        }
-    */
-
     public void update()
     {
         if(state != null)

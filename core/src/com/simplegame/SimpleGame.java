@@ -5,11 +5,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.simplegame.gameobjects.enemy.Enemy;
 import com.simplegame.gameobjects.GameObject;
 import com.simplegame.gameobjects.player.Player;
 import com.simplegame.states.StateMachine;
-import com.simplegame.states.TitleState;
+import com.simplegame.states.gamestates.TitleState;
 
 import java.util.ArrayList;
 

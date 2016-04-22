@@ -1,10 +1,12 @@
-package com.simplegame.states;
+package com.simplegame.states.gamestates;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.simplegame.SimpleGame;
 import com.simplegame.gameobjects.GameObject;
+import com.simplegame.states.State;
+import com.simplegame.states.StateMachine;
 
 /**
  * Created by Carl on 15/04/2016.
@@ -35,19 +37,19 @@ public class PlayState extends State
         {
             stateMachine.changeState(new TitleState(stateMachine));
         }
-    }
 
-    @Override
-    public void update(GameObject obj)
-    {
-
+        if(Gdx.input.isKeyPressed(Input.Keys.C))
+        {
+            stateMachine.changeState(new BattleState(stateMachine));
+        }
     }
 
     @Override
     public void enter()
     {
         System.out.println("Entered Play state.");
-        System.out.println("Press Z to change to Title state.\n");
+        System.out.println("Press Z to change to Title state.");
+        System.out.println("Press C to change to Battle state.\n");
     }
 
     @Override

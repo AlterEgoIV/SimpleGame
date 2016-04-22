@@ -15,18 +15,6 @@ public class Enemy extends GameObject
 {
     public Enemy(float x, float y)
     {
-        initialise(x, y);
-    }
-
-    @Override
-    protected void initialise()
-    {
-
-    }
-
-    @Override
-    protected void initialise(float x, float y)
-    {
         width = 100.0f;
         height = 100.0f;
         speed = 10.0f;

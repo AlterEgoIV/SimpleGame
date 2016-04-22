@@ -14,7 +14,7 @@ import java.awt.Rectangle;
  */
 public abstract class GameObject
 {
-    public StateMachine objectStateMachine;
+    protected StateMachine stateMachine;
     protected Vector2 position;
     protected Pixmap pixmap;
     protected Texture texture;
@@ -26,11 +26,9 @@ public abstract class GameObject
 
     public GameObject()
     {
-        objectStateMachine = new StateMachine();
+        stateMachine = new StateMachine();
     }
 
-    protected abstract void initialise();
-    protected abstract void initialise(float x, float y);
     public abstract void update();
     public abstract void render();
 
@@ -57,5 +55,10 @@ public abstract class GameObject
     public Vector2 getPosition()
     {
         return position;
+    }
+
+    public StateMachine getStateMachine()
+    {
+        return stateMachine;
     }
 }
