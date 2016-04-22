@@ -1,5 +1,7 @@
 package com.simplegame.states;
 
+import com.simplegame.gameobjects.GameObject;
+
 /**
  * Created by Carl on 15/04/2016.
  */
@@ -25,6 +27,7 @@ public abstract class State
     }
 
     public abstract void update();
+    public abstract void update(GameObject obj);
     public abstract void enter();
     public abstract void exit();
 }

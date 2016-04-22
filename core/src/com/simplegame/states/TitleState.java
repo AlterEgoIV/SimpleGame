@@ -3,6 +3,7 @@ package com.simplegame.states;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
+import com.simplegame.gameobjects.GameObject;
 
 /**
  * Created by Carl on 15/04/2016.
@@ -24,6 +25,12 @@ public class TitleState extends State
         {
             stateMachine.changeState(new PlayState(stateMachine));
         }
+    }
+
+    @Override
+    public void update(GameObject obj)
+    {
+
     }
 
     @Override

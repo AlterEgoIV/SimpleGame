@@ -27,7 +27,7 @@ public class PlayState extends State
         for(GameObject obj : SimpleGame.gameObjects)
         {
             obj.update();
-            //SimpleGame.collisionHandler.handleCollisions(obj);
+            SimpleGame.collisionHandler.handleCollisions(obj);
             obj.render();
         }
 
@@ -35,6 +35,12 @@ public class PlayState extends State
         {
             stateMachine.changeState(new TitleState(stateMachine));
         }
+    }
+
+    @Override
+    public void update(GameObject obj)
+    {
+
     }
 
     @Override

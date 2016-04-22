@@ -1,5 +1,7 @@
 package com.simplegame.states;
 
+import com.simplegame.gameobjects.GameObject;
+
 /**
  * Created by Carl on 15/04/2016.
  */
@@ -19,6 +21,14 @@ public class StateMachine
         if(state != null)
         {
             state.update();
+        }
+    }
+
+    public void update(GameObject obj)
+    {
+        if(state != null)
+        {
+            state.update(obj);
         }
     }
 

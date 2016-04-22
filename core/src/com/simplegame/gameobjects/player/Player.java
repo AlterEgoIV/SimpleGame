@@ -9,6 +9,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.SimpleGame;
 import com.simplegame.gameobjects.GameObject;
+import com.simplegame.states.HappyState;
+import com.simplegame.states.State;
 
 /**
  * Created by Carl on 07/04/2016.
@@ -18,6 +20,7 @@ public class Player extends GameObject
     public Player(float x, float y)
     {
         initialise(x, y);
+        objectStateMachine.changeState(new HappyState(objectStateMachine));
     }
 
     @Override
@@ -40,7 +43,7 @@ public class Player extends GameObject
 
         pixmap.setColor(1, 1, 1, 0);
         pixmap.fill();
-        pixmap.setColor(Color.FOREST);
+        pixmap.setColor(Color.WHITE);
         pixmap.fillCircle(pixmap.getWidth() / 2 - 1, pixmap.getHeight() / 2 - 1, (int)getWidth() / 2 - 1);
 
         texture = new Texture(pixmap);
@@ -54,6 +57,7 @@ public class Player extends GameObject
     @Override
     public void update()
     {
+        objectStateMachine.update(this);
         handleInput();
 
         SimpleGame.camera.position.set(sprite.getX() + width / 2, sprite.getY() + height / 2, 0);
