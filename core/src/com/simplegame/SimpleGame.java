@@ -5,7 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.simplegame.gameobjects.Enemy;
+import com.simplegame.gameobjects.enemy.Enemy;
 import com.simplegame.gameobjects.GameObject;
 import com.simplegame.gameobjects.player.Player;
 import com.simplegame.states.StateMachine;
@@ -20,7 +20,7 @@ public class SimpleGame extends ApplicationAdapter
   		such as Game States like Title, Menu, Play, Gameover?
   		What about different levels, like LevelOne, LevelTwo, can they be states?
 	*/
-	private StateMachine gameStateMachine;
+	private StateMachine stateMachine;
 	public static CollisionHandler collisionHandler;
 	public static ArrayList<GameObject> gameObjects;
 	public static SpriteBatch batch;
@@ -33,7 +33,7 @@ public class SimpleGame extends ApplicationAdapter
 		camera = new OrthographicCamera(1280, 720);
 		gameObjects = new ArrayList<GameObject>();
 		gameObjects.add(new Player(0, 0));
-		gameObjects.add(new Enemy(120, 120));
+		//gameObjects.add(new Enemy(120, 120));
 		tilemap = new Tilemap(10, 10);
 
 		batch = new SpriteBatch();
@@ -41,10 +41,10 @@ public class SimpleGame extends ApplicationAdapter
 		collisionHandler = new CollisionHandler();
 
 		// Why can't StateMachine be constructed with an initial State?
-		gameStateMachine = new StateMachine(/* new TitleState(stateMachine) */);
+		stateMachine = new StateMachine(/* new TitleState(stateMachine) */);
 
 		// Why must a StateMachine instance be passed to a new State?
-		gameStateMachine.changeState(new TitleState(gameStateMachine));
+		stateMachine.changeState(new TitleState(stateMachine));
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class SimpleGame extends ApplicationAdapter
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 
-		gameStateMachine.update();
+		stateMachine.update();
 
 		batch.end();
 	}

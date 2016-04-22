@@ -16,12 +16,6 @@ public class HappyState extends State
     }
 
     @Override
-    public void update()
-    {
-
-    }
-
-    @Override
     public void update(GameObject obj)
     {
         obj.getSprite().setColor(Color.YELLOW);

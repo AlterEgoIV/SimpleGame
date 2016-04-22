@@ -1,4 +1,4 @@
-package com.simplegame.gameobjects;
+package com.simplegame.gameobjects.enemy;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.SimpleGame;
+import com.simplegame.gameobjects.GameObject;
 
 /**
  * Created by Carl on 19/04/2016.

@@ -26,8 +26,8 @@ public abstract class State
         this.stateMachine = stateMachine;
     }
 
-    public abstract void update();
-    public abstract void update(GameObject obj);
+    public void update() {}
+    public void update(GameObject obj) {}
     public abstract void enter();
     public abstract void exit();
 }

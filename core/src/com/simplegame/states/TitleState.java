@@ -37,7 +37,7 @@ public class TitleState extends State
     public void enter()
     {
         System.out.println("Entered Title state.");
-        System.out.println("Press X to change to Play state.");
+        System.out.println("Press X to change to Play state.\n");
     }
 
     @Override
