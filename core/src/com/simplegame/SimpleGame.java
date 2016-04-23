@@ -25,7 +25,7 @@ public class SimpleGame extends ApplicationAdapter
 	public static ArrayList<GameObject> gameObjects;
 	public static SpriteBatch batch;
 	public static OrthographicCamera camera;
-	public static Tilemap tilemap;
+	//public static Tilemap tilemap;
 
 	@Override
 	public void create()
@@ -34,7 +34,7 @@ public class SimpleGame extends ApplicationAdapter
 		gameObjects = new ArrayList<GameObject>();
 		gameObjects.add(new Player(0, 0));
 		gameObjects.add(new Enemy(120, 120));
-		tilemap = new Tilemap(10, 10);
+		//tilemap = new Tilemap(10, 10);
 
 		batch = new SpriteBatch();
 

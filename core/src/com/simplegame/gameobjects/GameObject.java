@@ -19,7 +19,7 @@ public abstract class GameObject
     protected Pixmap pixmap;
     protected Texture texture;
     protected Sprite sprite;
-    protected Rectangle boundary;
+    protected Rectangle bounds;
     protected float width;
     protected float height;
     protected float speed;
