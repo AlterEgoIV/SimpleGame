@@ -17,7 +17,7 @@ import java.util.Random;
 public class Tile extends GameObject
 {
     // private Random rand;
-    protected int id;
+    // protected int id;
     protected boolean hasObject;
 
     public Tile()
@@ -58,19 +58,19 @@ public class Tile extends GameObject
         sprite.draw(SimpleGame.batch);
     }
 
-    public int getID()
+    /*public int getID()
     {
         return id;
-    }
+    }*/
 
-    public Tile defineTile(int id)
+    public Tile defineTile(int id, int xOffset, int yOffset)
     {
         Tile tile = new Tile();
 
         switch(id)
         {
-            case 0: { tile = new WallTile(); break; }
-            case 1: { tile = new FloorTile(); break; }
+            case 0: { tile = new WallTile(xOffset, yOffset); break; }
+            case 1: { tile = new FloorTile(xOffset, yOffset); break; }
             default: { System.out.println("No valid Tile ID available."); }
         }
 

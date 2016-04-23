@@ -4,14 +4,17 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.math.Vector2;
 
 /**
  * Created by Carl on 23/04/2016.
  */
 public class WallTile extends Tile
 {
-    public WallTile()
+    public WallTile(int xOffset, int yOffset)
     {
+        position = new Vector2(xOffset * width, yOffset * height);
+
         pixmap = new Pixmap((int)width, (int)height, Pixmap.Format.RGBA8888);
 
         pixmap.setColor(Color.WHITE);
@@ -26,6 +29,6 @@ public class WallTile extends Tile
         pixmap.dispose();
 
         sprite = new Sprite(texture);
-        //sprite.setPosition(position.x, position.y);
+        sprite.setPosition(position.x, position.y);
     }
 }

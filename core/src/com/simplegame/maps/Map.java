@@ -15,16 +15,21 @@ public class Map
 
     public Map()
     {
-        rows = 5;
-        cols = 5;
+        rows = 10;
+        cols = 10;
 
         tile = new Tile[rows][cols];
 
-        mapID = new int[][]{{0, 0, 0, 0, 0},
-                            {0, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 0},
-                            {0, 0, 0, 0, 0}};
+        mapID = new int[][]{{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
         for(int i = 0; i < rows; ++i)
         {
@@ -33,11 +38,11 @@ public class Map
                 tile[i][j] = new Tile();
                 int id = mapID[i][j];
 
-                tile[i][j] = tile[i][j].defineTile(id);
+                tile[i][j] = tile[i][j].defineTile(id, i, j);
 
-                tile[i][j].getPosition().x = i * tile[i][j].getWidth();
-                tile[i][j].getPosition().y = j * tile[i][j].getHeight();
-                tile[i][j].getSprite().setPosition(tile[i][j].getPosition().x, tile[i][j].getPosition().y);
+                //tile[i][j].getPosition().x = i * tile[i][j].getWidth();
+                //tile[i][j].getPosition().y = j * tile[i][j].getHeight();
+                //tile[i][j].getSprite().setPosition(tile[i][j].getPosition().x, tile[i][j].getPosition().y);
             }
         }
     }
