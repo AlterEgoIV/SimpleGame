@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.simplegame.gameobjects.GameObject;
 import com.simplegame.gameobjects.enemy.Enemy;
 import com.simplegame.gameobjects.player.Player;
+import com.simplegame.maps.Map;
 import com.simplegame.states.StateMachine;
 import com.simplegame.states.gamestates.TitleState;
 
@@ -25,6 +26,7 @@ public class SimpleGame extends ApplicationAdapter
 	public static ArrayList<GameObject> gameObjects;
 	public static SpriteBatch batch;
 	public static OrthographicCamera camera;
+	public static Map map;
 	//public static Tilemap tilemap;
 
 	@Override
@@ -34,6 +36,7 @@ public class SimpleGame extends ApplicationAdapter
 		gameObjects = new ArrayList<GameObject>();
 		gameObjects.add(new Player(0, 0));
 		gameObjects.add(new Enemy(120, 120));
+		map = new Map();
 		//tilemap = new Tilemap(10, 10);
 
 		batch = new SpriteBatch();

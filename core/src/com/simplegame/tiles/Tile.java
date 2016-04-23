@@ -22,9 +22,10 @@ public class Tile extends GameObject
 
     public Tile()
     {
+        //this.id = id;
         hasObject = false;
-        width = 64;
-        height = 64;
+        width = 128;
+        height = 128;
         position = new Vector2();
 //        rand = new Random();
 //        id = 0;
@@ -54,6 +55,25 @@ public class Tile extends GameObject
     @Override
     public void render()
     {
-        getSprite().draw(SimpleGame.batch);
+        sprite.draw(SimpleGame.batch);
+    }
+
+    public int getID()
+    {
+        return id;
+    }
+
+    public Tile defineTile(int id)
+    {
+        Tile tile = new Tile();
+
+        switch(id)
+        {
+            case 0: { tile = new WallTile(); break; }
+            case 1: { tile = new FloorTile(); break; }
+            default: { System.out.println("No valid Tile ID available."); }
+        }
+
+        return tile;
     }
 }

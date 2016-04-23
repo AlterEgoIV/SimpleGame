@@ -24,7 +24,7 @@ public class PlayState extends State
         Gdx.gl.glClearColor(0, 0, .5f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        //SimpleGame.tilemap.render();
+        SimpleGame.map.render();
 
         for(GameObject obj : SimpleGame.gameObjects)
         {

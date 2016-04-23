@@ -12,8 +12,6 @@ public class FloorTile extends Tile
 {
     public FloorTile()
     {
-        id = 1;
-
         pixmap = new Pixmap((int)width, (int)height, Pixmap.Format.RGBA8888);
 
         pixmap.setColor(Color.GREEN);

@@ -12,14 +12,15 @@ public class WallTile extends Tile
 {
     public WallTile()
     {
-        id = 0;
-
         pixmap = new Pixmap((int)width, (int)height, Pixmap.Format.RGBA8888);
+
         pixmap.setColor(Color.WHITE);
         pixmap.fill();
         pixmap.setColor(Color.RED);
-        pixmap.drawLine(0, 0, (int)width, (int)height);
-        pixmap.drawLine(0, (int)height, (int)width, 0);
+        pixmap.fillRectangle(0, 0, (int)width, 10);
+        pixmap.fillRectangle(0, 0, 10, (int)height);
+        pixmap.fillRectangle((int)width - 1, 0, -10, (int)height);
+        pixmap.fillRectangle(0, (int)height - 10, (int)width, 10);
 
         texture = new Texture(pixmap);
         pixmap.dispose();
