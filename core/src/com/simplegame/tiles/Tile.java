@@ -18,12 +18,12 @@ public class Tile extends GameObject
 {
     // private Random rand;
     // protected int id;
-    protected boolean hasObject;
+    protected boolean holdingObject;
 
     public Tile()
     {
         //this.id = id;
-        hasObject = false;
+        holdingObject = false;
         width = 128;
         height = 128;
         position = new Vector2();
@@ -34,7 +34,6 @@ public class Tile extends GameObject
 //        height = Gdx.graphics.getHeight() / 10;
 //        position = new Vector2(0, 0);
 //        //position = new Vector2(Gdx.graphics.getWidth() / width, Gdx.graphics.getHeight() / height);
-//        boundary = new Rectangle((int)position.x, (int)position.y, (int)width, (int)height);
 //        pixmap = new Pixmap((int)width, (int)height, Pixmap.Format.RGBA8888);
 //        pixmap.setColor(rand.nextInt());
 //        pixmap.fill();
@@ -75,5 +74,15 @@ public class Tile extends GameObject
         }
 
         return tile;
+    }
+
+    public boolean isHoldingObject()
+    {
+        return holdingObject;
+    }
+
+    public void setHoldingObject(boolean holdingObject)
+    {
+        this.holdingObject = holdingObject;
     }
 }

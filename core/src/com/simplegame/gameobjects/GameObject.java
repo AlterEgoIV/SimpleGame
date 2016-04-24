@@ -61,4 +61,9 @@ public abstract class GameObject
     {
         return stateMachine;
     }
+
+    public Rectangle getBounds()
+    {
+        return bounds;
+    }
 }

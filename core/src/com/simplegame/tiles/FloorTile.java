@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
+import java.awt.Rectangle;
+
 /**
  * Created by Carl on 23/04/2016.
  */
@@ -30,5 +32,7 @@ public class FloorTile extends Tile
 
         sprite = new Sprite(texture);
         sprite.setPosition(position.x, position.y);
+
+        bounds = new Rectangle((int)position.x, (int)position.y, (int)width, (int)height);
     }
 }

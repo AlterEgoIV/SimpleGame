@@ -11,6 +11,8 @@ import com.simplegame.SimpleGame;
 import com.simplegame.gameobjects.GameObject;
 import com.simplegame.states.objectstates.HappyState;
 
+import java.awt.Rectangle;
+
 /**
  * Created by Carl on 07/04/2016.
  */
@@ -40,6 +42,8 @@ public class Player extends GameObject
         sprite = new Sprite(texture);
         sprite.setOriginCenter();
         sprite.setPosition(position.x - width / 2, position.y - height / 2);
+
+        bounds = new Rectangle((int)position.x, (int)position.y, (int)width, (int)height);
     }
 
     @Override
@@ -79,5 +83,7 @@ public class Player extends GameObject
         {
             getSprite().translateX(speed);
         }
+
+        bounds.setLocation((int)sprite.getX(), (int)sprite.getY());
     }
 }
