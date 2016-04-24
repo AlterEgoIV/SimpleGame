@@ -71,9 +71,16 @@ public class Map
                     tile[i][j].getSprite().setColor(Color.WHITE);
                 }
 
-                counter++;
+                // Adjust counter appropriately
+                if(SimpleGame.gameObjects.size() > 1)
+                {
+                    counter++;
 
-                if(counter == SimpleGame.gameObjects.size() - 1) { counter = 0; }
+                    if(counter == SimpleGame.gameObjects.size() - 1)
+                    {
+                        counter = 0;
+                    }
+                }
             }
         }
     }

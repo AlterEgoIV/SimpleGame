@@ -35,7 +35,7 @@ public class SimpleGame extends ApplicationAdapter
 		camera = new OrthographicCamera(1280, 720);
 		gameObjects = new ArrayList<GameObject>();
 		gameObjects.add(new Player(500, 500));
-		gameObjects.add(new Enemy(120, 120));
+		//gameObjects.add(new Enemy(120, 120));
 		map = new Map();
 		//tilemap = new Tilemap(10, 10);
 
