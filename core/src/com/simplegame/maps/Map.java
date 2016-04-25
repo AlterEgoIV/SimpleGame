@@ -17,11 +17,7 @@ public class Map
 
     public Map()
     {
-        rows = 10;
-        cols = 10;
         counter = 0;
-
-        tile = new Tile[rows][cols];
 
         mapID = new int[][]{{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
@@ -34,11 +30,19 @@ public class Map
                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
                             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
+        rows = mapID.length;
+        cols = mapID[0].length;
+
+        tile = new Tile[rows][cols];
+
+        System.out.println("The map has " + rows + " rows and " + cols + " columns.");
+
         for(int i = 0; i < rows; ++i)
         {
             for(int j = 0; j < cols; ++j)
             {
                 tile[i][j] = new Tile();
+                System.out.println("Tile at " + i + " " + j + " created.");
                 int id = mapID[i][j];
 
                 tile[i][j] = tile[i][j].defineTile(id, i, j);
@@ -58,18 +62,7 @@ public class Map
             {
                 //System.out.println("Tile bounds at position: " + tile[i][j].getBounds().getX() + ", " + tile[i][j].getBounds().getY());
 
-                if(tile[i][j].getBounds().intersects(SimpleGame.gameObjects.get(counter).getBounds()))
-                {
-                    tile[i][j].setHoldingObject(true);
-                    tile[i][j].getSprite().setColor(Color.SCARLET);
-                    //System.out.println("Object at position: " + tile[i][j].getPosition().x + ", " + tile[i][j].getPosition().y);
-                    //System.out.println("Object at position: " + SimpleGame.gameObjects.get(counter).getSprite().getX() + ", " + SimpleGame.gameObjects.get(counter).getSprite().getY());
-                }
-                else
-                {
-                    tile[i][j].setHoldingObject(false);
-                    tile[i][j].getSprite().setColor(Color.WHITE);
-                }
+                tile[i][j].checkCollisions(counter);
 
                 // Adjust counter appropriately
                 if(SimpleGame.gameObjects.size() > 1)

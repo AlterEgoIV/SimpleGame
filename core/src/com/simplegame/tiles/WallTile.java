@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
+import com.simplegame.SimpleGame;
 
 import java.awt.Rectangle;
 
@@ -34,5 +35,27 @@ public class WallTile extends Tile
         sprite.setPosition(position.x, position.y);
 
         bounds = new Rectangle((int)position.x, (int)position.y, (int)width, (int)height);
+    }
+
+    @Override
+    public void checkCollisions(int counter)
+    {
+        if(bounds.intersects(SimpleGame.gameObjects.get(counter).getBounds()))
+        {
+            //Rectangle rect = bounds.intersection(SimpleGame.gameObjects.get(counter).getBounds());
+
+            //SimpleGame.gameObjects.get(counter).getSprite().setPosition(SimpleGame.gameObjects.get(counter).getPreviousPosition().x, SimpleGame.gameObjects.get(counter).getPreviousPosition().y);
+
+            setHoldingObject(true);
+            getSprite().setColor(Color.SCARLET);
+
+            //System.out.println("Object at position: " + tile[i][j].getPosition().x + ", " + tile[i][j].getPosition().y);
+            //System.out.println("Object at position: " + SimpleGame.gameObjects.get(counter).getSprite().getX() + ", " + SimpleGame.gameObjects.get(counter).getSprite().getY());
+        }
+        else
+        {
+            setHoldingObject(false);
+            getSprite().setColor(Color.WHITE);
+        }
     }
 }

@@ -28,6 +28,9 @@ public class Player extends GameObject
 
         //position = new Vector2(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
         position = new Vector2(x, y);
+        previousPosition = position;
+
+        direction = new Vector2(0, 0);
 
         pixmap = new Pixmap((int)getWidth(), (int)getHeight(), Pixmap.Format.RGBA8888);
 
@@ -64,6 +67,9 @@ public class Player extends GameObject
 
     private void handleInput()
     {
+        //previousPosition.x = sprite.getX();
+        //previousPosition.y = sprite.getY();
+
         if(Gdx.input.isKeyPressed(Input.Keys.UP))
         {
             getSprite().translateY(speed);

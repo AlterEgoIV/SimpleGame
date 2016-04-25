@@ -76,6 +76,9 @@ public class Tile extends GameObject
         return tile;
     }
 
+    public void checkCollisions() {}
+    public void checkCollisions(int counter) {}
+
     public boolean isHoldingObject()
     {
         return holdingObject;

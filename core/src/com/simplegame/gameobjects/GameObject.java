@@ -16,6 +16,8 @@ public abstract class GameObject
 {
     protected StateMachine stateMachine;
     protected Vector2 position;
+    protected Vector2 previousPosition;
+    protected Vector2 direction;
     protected Pixmap pixmap;
     protected Texture texture;
     protected Sprite sprite;
@@ -65,5 +67,15 @@ public abstract class GameObject
     public Rectangle getBounds()
     {
         return bounds;
+    }
+
+    public Vector2 getPreviousPosition()
+    {
+        return previousPosition;
+    }
+
+    public void setPreviousPosition(Vector2 previousPosition)
+    {
+        this.previousPosition = previousPosition;
     }
 }
