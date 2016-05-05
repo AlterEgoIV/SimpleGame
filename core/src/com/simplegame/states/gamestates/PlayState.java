@@ -29,7 +29,6 @@ public class PlayState extends State
         for(GameObject obj : SimpleGame.gameObjects)
         {
             obj.update();
-            //SimpleGame.collisionHandler.handleCollisions(obj, SimpleGame.map);
             obj.render();
         }
 

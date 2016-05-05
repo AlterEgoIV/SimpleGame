@@ -34,22 +34,14 @@ public class Player extends GameObject
         pixmap.fillCircle(pixmap.getWidth() / 2 - 1, pixmap.getHeight() / 2 - 1, (int)getWidth() / 2 - 1);
 
         texture = new Texture(pixmap);
-        //pixmap.dispose();
 
         sprite = new Sprite(texture);
         sprite.setOriginCenter();
         sprite.setPosition(position.x - width / 2, position.y - height / 2);
 
-        pixmap.setColor(0, 0, 1, .5f);
-        pixmap.fill();
-
-        texture = new Texture(pixmap);
         pixmap.dispose();
 
-        rectSprite = new Sprite(texture);
-
         bounds = new Rectangle((int)position.x, (int)position.y, (int)width, (int)height);
-        rectSprite.setPosition((float)bounds.getX(), (float)bounds.getY());
     }
 
     @Override
@@ -69,7 +61,6 @@ public class Player extends GameObject
     @Override
     public void render()
     {
-        rectSprite.draw(SimpleGame.batch);
         getSprite().draw(SimpleGame.batch);
     }
 
@@ -86,7 +77,6 @@ public class Player extends GameObject
         }
 
         bounds.setLocation((int)sprite.getX(), (int)sprite.getY());
-        rectSprite.setPosition((float)bounds.getX(), (float)bounds.getY());
     }
 
     private void handleYAxisInput()
@@ -102,32 +92,5 @@ public class Player extends GameObject
         }
 
         bounds.setLocation((int)sprite.getX(), (int)sprite.getY());
-        rectSprite.setPosition((float)bounds.getX(), (float)bounds.getY());
-    }
-
-    private void handleInput()
-    {
-        if(Gdx.input.isKeyPressed(Input.Keys.UP))
-        {
-            getSprite().translateY(speed);
-        }
-
-        if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
-        {
-            getSprite().translateY(-speed);
-        }
-
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT))
-        {
-            getSprite().translateX(-speed);
-        }
-
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT))
-        {
-            getSprite().translateX(speed);
-        }
-
-        bounds.setLocation((int)sprite.getX(), (int)sprite.getY());
-        rectSprite.setPosition((float)bounds.getX(), (float)bounds.getY());
     }
 }

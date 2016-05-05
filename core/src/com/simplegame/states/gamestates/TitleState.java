@@ -3,10 +3,8 @@ package com.simplegame.states.gamestates;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
-import com.simplegame.gameobjects.GameObject;
 import com.simplegame.states.State;
 import com.simplegame.states.StateMachine;
-import com.simplegame.states.gamestates.PlayState;
 
 /**
  * Created by Carl on 15/04/2016.

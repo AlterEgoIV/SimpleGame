@@ -3,7 +3,6 @@ package com.simplegame.gameobjects;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.states.StateMachine;
 
@@ -20,7 +19,6 @@ public abstract class GameObject
     protected Texture texture;
     protected Sprite sprite;
     protected Rectangle bounds;
-    protected Sprite rectSprite;
     protected float width;
     protected float height;
     protected float speed;
@@ -38,11 +36,6 @@ public abstract class GameObject
         return sprite;
     }
 
-    public Sprite getRectSprite()
-    {
-        return rectSprite;
-    }
-
     public float getWidth()
     {
         return width;
@@ -51,16 +44,6 @@ public abstract class GameObject
     public float getHeight()
     {
         return height;
-    }
-
-    public float getSpeed()
-    {
-        return speed;
-    }
-
-    public Vector2 getPosition()
-    {
-        return position;
     }
 
     public StateMachine getStateMachine()

@@ -20,6 +20,9 @@ public class SimpleGame extends ApplicationAdapter
   		Can the StateMachine be used appropriately to model States other than object States,
   		such as Game States like Title, Menu, Play, Gameover?
   		What about different levels, like LevelOne, LevelTwo, can they be states?
+
+  		Answer:
+  		Yes.
 	*/
 	private StateMachine stateMachine;
 	public static CollisionHandler collisionHandler;
@@ -27,7 +30,6 @@ public class SimpleGame extends ApplicationAdapter
 	public static SpriteBatch batch;
 	public static OrthographicCamera camera;
 	public static Map map;
-	//public static Tilemap tilemap;
 
 	@Override
 	public void create()
@@ -37,7 +39,6 @@ public class SimpleGame extends ApplicationAdapter
 		gameObjects.add(new Player(500, 500));
 		//gameObjects.add(new Enemy(120, 120));
 		map = new Map();
-		//tilemap = new Tilemap(10, 10);
 
 		batch = new SpriteBatch();
 

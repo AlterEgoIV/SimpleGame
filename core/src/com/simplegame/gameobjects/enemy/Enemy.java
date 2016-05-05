@@ -22,7 +22,6 @@ public class Enemy extends GameObject
         height = 100.0f;
         speed = 10.0f;
 
-        //position = new Vector2(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
         position = new Vector2(x, y);
 
         pixmap = new Pixmap((int)getWidth(), (int)getHeight(), Pixmap.Format.RGBA8888);

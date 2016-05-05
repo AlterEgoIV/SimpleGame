@@ -1,6 +1,5 @@
 package com.simplegame.maps;
 
-import com.simplegame.SimpleGame;
 import com.simplegame.tiles.Tile;
 
 /**
@@ -8,26 +7,26 @@ import com.simplegame.tiles.Tile;
  */
 public class Map
 {
-    protected int[][] mapID;
+    protected int[][] tileID;
     protected Tile[][] tile;
     private int rows;
     private int cols;
 
     public Map()
     {
-        mapID = new int[][]{{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 0, 1, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                            {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+        tileID = new int[][]{{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                             {0, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                             {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
-        rows = mapID.length;
-        cols = mapID[0].length;
+        rows = tileID.length;
+        cols = tileID[0].length;
 
         tile = new Tile[rows][cols];
 
@@ -37,36 +36,12 @@ public class Map
             {
                 tile[i][j] = new Tile();
                 System.out.println("Tile at " + i + " " + j + " created.");
-                int id = mapID[i][j];
+                int id = tileID[i][j];
 
                 tile[i][j] = tile[i][j].defineTile(id, i, j);
             }
         }
     }
-
-    /*public void update()
-    {
-        for(int i = 0; i < rows; ++i)
-        {
-            for(int j = 0; j < cols; ++j)
-            {
-                //System.out.println("Tile bounds at position: " + tile[i][j].getBounds().getX() + ", " + tile[i][j].getBounds().getY());
-
-                tile[i][j].checkCollisions(counter);
-
-                // Adjust counter appropriately
-                if(SimpleGame.gameObjects.size() > 1)
-                {
-                    counter++;
-
-                    if(counter == SimpleGame.gameObjects.size() - 1)
-                    {
-                        counter = 0;
-                    }
-                }
-            }
-        }
-    }*/
 
     public void render()
     {
@@ -74,9 +49,7 @@ public class Map
         {
             for(int j = 0; j < cols; ++j)
             {
-                tile[i][j].getSprite().draw(SimpleGame.batch);
-                //tile[i][j].getRectSprite().draw(SimpleGame.batch);
-                //tile[i][j].getRectSprite();
+                tile[i][j].render();
             }
         }
     }
