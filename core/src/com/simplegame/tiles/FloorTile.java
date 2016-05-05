@@ -28,11 +28,19 @@ public class FloorTile extends Tile
         pixmap.fillRectangle(0, (int)height - 10, (int)width, 10);
 
         texture = new Texture(pixmap);
-        pixmap.dispose();
 
         sprite = new Sprite(texture);
         sprite.setPosition(position.x, position.y);
 
+        pixmap.setColor(1, 0, 0, .5f);
+        pixmap.fill();
+
+        texture = new Texture(pixmap);
+        pixmap.dispose();
+
+        rectSprite = new Sprite(texture);
+
         bounds = new Rectangle((int)position.x, (int)position.y, (int)width, (int)height);
+        rectSprite.setPosition((float)bounds.getX(), (float)bounds.getY());
     }
 }

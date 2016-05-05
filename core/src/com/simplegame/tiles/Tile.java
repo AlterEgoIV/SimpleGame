@@ -16,33 +16,22 @@ import java.util.Random;
  */
 public class Tile extends GameObject
 {
-    // private Random rand;
-    // protected int id;
     protected boolean holdingObject;
+    protected boolean leftSideColliding;
+    protected boolean rightSideColliding;
+    protected boolean topSideColliding;
+    protected boolean bottomSideColliding;
 
     public Tile()
     {
-        //this.id = id;
         holdingObject = false;
+        leftSideColliding = false;
+        rightSideColliding = false;
+        topSideColliding = false;
+        bottomSideColliding = false;
         width = 128;
         height = 128;
         position = new Vector2();
-//        rand = new Random();
-//        id = 0;
-//        hasObject = false;
-//        width = Gdx.graphics.getWidth() / 10;
-//        height = Gdx.graphics.getHeight() / 10;
-//        position = new Vector2(0, 0);
-//        //position = new Vector2(Gdx.graphics.getWidth() / width, Gdx.graphics.getHeight() / height);
-//        pixmap = new Pixmap((int)width, (int)height, Pixmap.Format.RGBA8888);
-//        pixmap.setColor(rand.nextInt());
-//        pixmap.fill();
-//        texture = new Texture(pixmap);
-//        pixmap.dispose();
-//        sprite = new Sprite(texture);
-//        //sprite.setPosition(position.x, position.y);
-//
-//        System.out.println("Tile object initialised.");
     }
 
     @Override
@@ -54,13 +43,9 @@ public class Tile extends GameObject
     @Override
     public void render()
     {
-        sprite.draw(SimpleGame.batch);
+        //sprite.draw(SimpleGame.batch);
+        //rectSprite.draw(SimpleGame.batch);
     }
-
-    /*public int getID()
-    {
-        return id;
-    }*/
 
     public Tile defineTile(int id, int xOffset, int yOffset)
     {
@@ -76,8 +61,9 @@ public class Tile extends GameObject
         return tile;
     }
 
-    public void checkCollisions() {}
-    public void checkCollisions(int counter) {}
+    public boolean checkCollisions(GameObject obj) { return false; }
+    public boolean handleXAxisCollisions(GameObject obj) { return false; }
+    public boolean handleYAxisCollisions(GameObject obj) { return false; }
 
     public boolean isHoldingObject()
     {
